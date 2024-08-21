@@ -1,0 +1,165 @@
+export const FRONTEND_SKILLS = [
+  {
+    skill_name: "Html 5",
+    image: "/images/icons/html.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Css",
+    image: "/images/icons/css.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Java Script",
+    image: "/images/icons/js.png",
+    width: 65,
+    height: 65,
+  },
+  {
+    skill_name: "Tailwind Css",
+    image: "/images/icons/tailwind.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "React",
+    image: "/images/icons/react.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Type Script",
+    image: "/images/icons/ts.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Next js 14",
+    image: "/images/icons/next.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Framer Motion",
+    image: "/images/icons/framer.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Figma",
+    image: "/images/icons/figma.png",
+    width: 50,
+    height: 50,
+  },
+];
+
+export const BACKEND_SKILLS = [
+  {
+    skill_name: "Node js",
+    image: "/images/icons/node-js.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Express js",
+    image: "/images/icons/express.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Mongo db",
+    image: "/images/icons/mongodb.png",
+    width: 80,
+    height: 80,
+  },
+
+  {
+    skill_name: "My SQL",
+    image: "/images/icons/mysql.png",
+    width: 70,
+    height: 70,
+  },
+  {
+    skill_name: "Github",
+    image: "/images/icons/github.png",
+    width: 70,
+    height: 70,
+  },
+];
+
+export const PROJECT_CARDLIST = [
+  {
+    image: "/images/portfolio/portfolio.png",
+    width: 1280,
+    height: 862,
+    title: "Portfolio",
+    description: "A page to showcase my front end developer skills.",
+    page: "/portfolio",
+  },
+  {
+    image: "/images/portfolio/food-app.png",
+    width: 1280,
+    height: 862,
+    title: "Food App",
+    description: "A place to search your favourite recipes.",
+    page: "/foodapp",
+  },
+  {
+    image: "/images/portfolio/tindog.png",
+    width: 1280,
+    height: 862,
+    title: "Tindog",
+    description: "An app for dog owners to communicate.",
+    page: "/tindog",
+  },
+  {
+    image: "/images/portfolio/simon-game.png",
+    width: 1280,
+    height: 862,
+    title: "Simon Game",
+    description: "A simple JavaScript Simon game.",
+    page: "/simon-game",
+  },
+  {
+    image: "/images/portfolio/dice-game.png",
+    width: 1280,
+    height: 862,
+    title: "Dice Game",
+    description: "A simple JavaScript game of dice.",
+    page: "/dice-game",
+  },
+  {
+    image: "/images/portfolio/rfs.png",
+    width: 1280,
+    height: 862,
+    title: "Red Flag Symptoms",
+    description: "An alphabetic list of symptoms to help diagnose patients",
+    page: "/rfs",
+  },
+  {
+    image: "/images/portfolio/todolistv2.png",
+    width: 1280,
+    height: 862,
+    title: "Todo List",
+    description: "A simple to-do list application to help manage your tasks.",
+    page: "/todolistv2",
+  },
+  {
+    image: "/images/portfolio/newsletter.png",
+    width: 1280,
+    height: 862,
+    title: "News Letter",
+    description: "Sign up to recive up to date news letter.",
+    page: "/newsletter",
+  },
+  {
+    image: "/images/portfolio/secrets.png",
+    width: 1280,
+    height: 862,
+    title: "Secrets",
+    description: "Tell you secrets to the world anonymously and let it out.",
+    page: "/secrets",
+  },
+];
