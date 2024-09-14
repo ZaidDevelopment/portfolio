@@ -33,6 +33,7 @@ const Skills = () => {
             autoPlay
             loop
             muted
+            playsInline
             width="100%"
             aria-label="Background animation of stars and earth"
           >
