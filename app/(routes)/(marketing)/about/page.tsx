@@ -25,6 +25,7 @@ const Page = () => {
             autoPlay
             loop
             muted
+            playsInline
             aria-label="Background video of defocused magic pattern"
           >
             <source
