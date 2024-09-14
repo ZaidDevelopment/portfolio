@@ -88,7 +88,7 @@ const Page = () => {
                 This diverse background has allowed me to bridge the gap between{" "}
                 <strong>business objectives</strong> and
                 <strong>technical solutions</strong>, giving me a comprehensive
-                understanding of how technology drives success. While I've
+                understanding of how technology drives success. While I&apos;ve
                 thrived in different areas of tech, my passion lies in{" "}
                 <strong>Front-End Development</strong>, where I focus on
                 building <strong>responsive, user-friendly applications</strong>{" "}

@@ -60,7 +60,7 @@ const Page = () => {
             </h2>
             <p className="text-slate-700">
               This project allowed me to explore how JavaScript and HTML5 can be
-              used together to manipulate the DOM. Although it's a simple
+              used together to manipulate the DOM. Although it&apos;s a simple
               project, it demonstrates core JavaScript, HTML5, and CSS3
               concepts.
             </p>

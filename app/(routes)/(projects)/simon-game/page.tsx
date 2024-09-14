@@ -62,10 +62,10 @@ const Page = () => {
             </h2>
             <p className="text-slate-700">
               The game logic was developed using JavaScript and JQuery. This
-              project challenged me to break down the game's code and logic into
-              smaller, manageable segments. I gained in-depth experience with
-              vanilla JavaScript, which has strengthened my understanding of the
-              language and how it can be applied in technologies such as
+              project challenged me to break down the game&apos;s code and logic
+              into smaller, manageable segments. I gained in-depth experience
+              with vanilla JavaScript, which has strengthened my understanding
+              of the language and how it can be applied in technologies such as
               Node.js, Express, and React.
             </p>
 

@@ -62,7 +62,7 @@ const Page = () => {
               The user can register an account and submit a secret note
               anonymously for others to read. User details are stored in a
               MongoDB database. Once logged in, users can view their own and
-              others' secrets.
+              others&apos; secrets.
             </p>
 
             <h2 className="mt-4 font-bold text-blue-950 underline">
