@@ -1,54 +1,80 @@
 import React from "react";
 
-const Page = () => {
+// Define a TypeScript interface for form data
+interface FormProps {
+  actionUrl: string;
+}
+
+const ContactForm = ({ actionUrl }: FormProps) => {
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gradient-to-b from-[#000] via-gray-800 to-[#191c1f] px-4">
+    <div className="flex h-screen w-full items-center justify-center bg-gradient-to-b from-black via-gray-800 to-[#191c1f] px-4">
       <form
-        action="https://formspree.io/f/mleqqedd"
+        action={actionUrl}
         method="POST"
-        className="flex w-full max-w-[600px] flex-col text-gray-800"
+        className="flex w-full max-w-lg flex-col text-gray-800"
       >
         <div className="pb-8">
-          <p className="inline border-b-4 border-pink-600 text-4xl font-bold text-gray-300">
+          <h1 className="inline-block border-b-4 border-pink-600 text-4xl font-bold text-gray-300">
             Contact
-          </p>
-          <p className="py-4 text-sm text-gray-300">
+          </h1>
+          <p className="mt-2 text-sm text-gray-300">
             Submit your query using the form below
           </p>
         </div>
-        <label>
-          <input
-            className="w-full rounded bg-[#ccd6f6] p-2"
-            type="text"
-            placeholder="Name"
-            name="name"
-          />
+
+        {/* Name Input */}
+        <label htmlFor="name" className="sr-only">
+          Name
         </label>
-        <label>
-          <input
-            className="my-4 w-full rounded bg-[#ccd6f6] p-2"
-            type="email"
-            placeholder="Email"
-            name="email"
-          />
+        <input
+          id="name"
+          className="w-full rounded bg-[#ccd6f6] p-2 text-gray-800"
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+        />
+
+        {/* Email Input */}
+        <label htmlFor="email" className="sr-only">
+          Email
         </label>
-        <label>
-          <textarea
-            className="w-full rounded bg-[#ccd6f6] p-2"
-            name="message"
-            rows={7}
-            placeholder="Message"
-          ></textarea>
+        <input
+          id="email"
+          className="my-4 w-full rounded bg-[#ccd6f6] p-2 text-gray-800"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+
+        {/* Message Textarea */}
+        <label htmlFor="message" className="sr-only">
+          Message
         </label>
+        <textarea
+          id="message"
+          className="w-full rounded bg-[#ccd6f6] p-2 text-gray-800"
+          name="message"
+          rows={7}
+          placeholder="Message"
+          required
+        ></textarea>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          className="mx-auto my-8 rounded border-2 px-4 py-3 text-white hover:border-pink-600 hover:bg-pink-600"
+          className="mx-auto mt-8 w-full max-w-[200px] rounded border-2 border-pink-600 px-4 py-3 text-white transition-all duration-300 hover:bg-pink-600 hover:text-white"
         >
           Let&apos;s Collaborate
         </button>
       </form>
     </div>
   );
+};
+
+const Page = () => {
+  return <ContactForm actionUrl="https://formspree.io/f/mleqqedd" />;
 };
 
 export default Page;

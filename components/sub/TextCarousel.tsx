@@ -9,11 +9,11 @@ interface TextCarouselProps {
   autoSlideInterval?: number;
 }
 
-const TextCarousel: React.FC<TextCarouselProps> = ({
+const TextCarousel = ({
   items,
   autoSlide = true,
   autoSlideInterval = 3000,
-}) => {
+}: TextCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {

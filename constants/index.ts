@@ -1,101 +1,120 @@
-export const FRONTEND_SKILLS = [
+// Define TypeScript Interfaces for Skills and Project Cards
+export interface Skill {
+  skillName: string;
+  image: string;
+  width: number;
+  height: number;
+}
+
+export interface ProjectCard {
+  image: string;
+  width: number;
+  height: number;
+  title: string;
+  description: string;
+  page: string;
+}
+
+// FRONTEND_SKILLS Data
+export const FRONTEND_SKILLS: Skill[] = [
   {
-    skill_name: "Html 5",
+    skillName: "HTML 5",
     image: "/images/icons/html.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Css",
+    skillName: "CSS",
     image: "/images/icons/css.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Java Script",
+    skillName: "JavaScript",
     image: "/images/icons/js.png",
-    width: 65,
-    height: 65,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Tailwind Css",
+    skillName: "Tailwind CSS",
     image: "/images/icons/tailwind.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "React",
+    skillName: "React",
     image: "/images/icons/react.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Type Script",
+    skillName: "TypeScript",
     image: "/images/icons/ts.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Next js 14",
+    skillName: "Next.js",
     image: "/images/icons/next.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Framer Motion",
+    skillName: "Framer Motion",
     image: "/images/icons/framer.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Figma",
+    skillName: "Figma",
     image: "/images/icons/figma.png",
-    width: 50,
-    height: 50,
+    width: 96,
+    height: 96,
   },
 ];
 
-export const BACKEND_SKILLS = [
+// BACKEND_SKILLS Data
+export const BACKEND_SKILLS: Skill[] = [
   {
-    skill_name: "Node js",
+    skillName: "Node.js",
     image: "/images/icons/node-js.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Express js",
+    skillName: "Express.js",
     image: "/images/icons/express.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Mongo db",
+    skillName: "MongoDB",
     image: "/images/icons/mongodb.png",
-    width: 80,
-    height: 80,
+    width: 96,
+    height: 96,
   },
-
   {
-    skill_name: "My SQL",
+    skillName: "MySQL",
     image: "/images/icons/mysql.png",
-    width: 70,
-    height: 70,
+    width: 96,
+    height: 96,
   },
   {
-    skill_name: "Github",
+    skillName: "GitHub",
     image: "/images/icons/github.png",
-    width: 70,
-    height: 70,
+    width: 96,
+    height: 96,
   },
 ];
 
-export const PROJECT_CARDLIST = [
+// PROJECT_CARDLIST Data
+export const PROJECT_CARDLIST: ProjectCard[] = [
   {
     image: "/images/portfolio/portfolio.png",
     width: 1280,
     height: 862,
     title: "Portfolio",
-    description: "A page to showcase my front end developer skills.",
+    description: "A page to showcase my front-end developer skills.",
     page: "/portfolio",
   },
   {
@@ -103,7 +122,7 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Food App",
-    description: "A place to search your favourite recipes.",
+    description: "A platform to search for your favorite recipes.",
     page: "/foodapp",
   },
   {
@@ -111,7 +130,7 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Tindog",
-    description: "An app for dog owners to communicate.",
+    description: "An app for dog owners to connect.",
     page: "/tindog",
   },
   {
@@ -127,7 +146,7 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Dice Game",
-    description: "A simple JavaScript game of dice.",
+    description: "A fun dice game built with JavaScript.",
     page: "/dice-game",
   },
   {
@@ -135,7 +154,7 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Red Flag Symptoms",
-    description: "An alphabetic list of symptoms to help diagnose patients",
+    description: "An alphabetical list of symptoms to help diagnose patients.",
     page: "/rfs",
   },
   {
@@ -143,15 +162,15 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Todo List",
-    description: "A simple to-do list application to help manage your tasks.",
+    description: "A simple to-do list application to manage tasks.",
     page: "/todolistv2",
   },
   {
     image: "/images/portfolio/newsletter.png",
     width: 1280,
     height: 862,
-    title: "News Letter",
-    description: "Sign up to recive up to date news letter.",
+    title: "Newsletter",
+    description: "Sign up to receive the latest newsletter updates.",
     page: "/newsletter",
   },
   {
@@ -159,7 +178,7 @@ export const PROJECT_CARDLIST = [
     width: 1280,
     height: 862,
     title: "Secrets",
-    description: "Tell you secrets to the world anonymously and let it out.",
+    description: "Share secrets anonymously with the world.",
     page: "/secrets",
   },
 ];

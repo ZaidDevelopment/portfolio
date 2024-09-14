@@ -1,60 +1,77 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import classNames from "classnames";
+
+interface LinkItem {
+  href: string;
+  link: string;
+}
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const links = [
-    // { href: "/", link: "Home" },
-    { href: "/about", link: "About" },
-    { href: "/#skills", link: "Skills" },
-    { href: "/#projects", link: "Portfolio" },
-    { href: "/contact", link: "Contact" },
-  ];
-
-  // change navigation style depending on page open
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
-  const [bgColor, setbgColor] = useState("bg-transparent");
-  const [textColor, setTextColor] = useState("text-white");
-  const [textHoverColor, setTextHoverColor] = useState("text-gray-200");
+
+  const links: LinkItem[] = useMemo(
+    () => [
+      { href: "/about", link: "About" },
+      { href: "/#skills", link: "Skills" },
+      { href: "/#projects", link: "Portfolio" },
+      { href: "/contact", link: "Contact" },
+    ],
+    [],
+  );
+
+  const [bgColor, setBgColor] = useState<string>("bg-transparent");
+  const [textColor, setTextColor] = useState<string>("text-white");
+  const [textHoverColor, setTextHoverColor] = useState<string>(
+    "hover:text-gray-200",
+  );
+
+  //CSS theme
   useEffect(() => {
-    // dark theme
     if (pathname === "/" || pathname === "/contact" || pathname === "/about") {
-      setbgColor("bg-transparent");
+      setBgColor("bg-transparent");
       setTextColor("text-white");
       setTextHoverColor("hover:text-gray-200");
     } else {
-      // light theme for other pages
-      setbgColor("bg-white");
+      setBgColor("bg-white");
       setTextColor("text-black");
       setTextHoverColor("hover:text-gray-500");
     }
   }, [pathname]);
 
   return (
-    <nav className={`w-full ${bgColor}`}>
+    <nav className={classNames("w-full", bgColor)}>
       <div className="mx-auto max-w-5xl px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <a href="/">
+            <Link href="/" aria-label="Home">
               <Image
                 src="/images/logos/logo.png"
-                alt="logo"
+                alt="Zaid Development logo"
                 width={110}
                 height={110}
+                priority={true}
+                className="transition-opacity hover:opacity-80"
               />
-            </a>
+            </Link>
           </div>
-          <div className="block md:hidden">
+
+          {/* Hamburger Icon */}
+          <div className="md:hidden">
             <button
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-              className={`${textColor} ${textHoverColor} focus:outline-none`}
+              onClick={() => setIsOpen(!isOpen)}
+              className={classNames(
+                textColor,
+                textHoverColor,
+                "focus:outline-none",
+              )}
+              aria-label="Toggle menu"
             >
-              {/* Hamburger Icon */}
               {isOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -63,11 +80,11 @@ const Navbar = () => {
                   height="24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
+                  <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
               ) : (
                 <svg
@@ -83,15 +100,20 @@ const Navbar = () => {
               )}
             </button>
           </div>
+
+          {/* Large device menu */}
           <div className="hidden md:block">
-            {/* Navbar Links */}
             <div className="flex items-baseline space-x-4">
-              {links.map((link) => (
-                <Link key={link.link} href={link.href}>
+              {links.map(({ href, link }) => (
+                <Link key={link} href={href}>
                   <span
-                    className={`rounded-2xl px-3 py-2 text-sm font-medium ${textColor} hover:bg-red-700 hover:bg-opacity-60`}
+                    className={classNames(
+                      "rounded-2xl px-3 py-2 text-sm font-medium",
+                      textColor,
+                      "hover:bg-red-700 hover:bg-opacity-60",
+                    )}
                   >
-                    {link.link}
+                    {link}
                   </span>
                 </Link>
               ))}
@@ -99,17 +121,21 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
+
+      {/* Mobile menu */}
       {isOpen && (
         <div className="fade-in px-4 py-2 sm:px-6 md:hidden">
           <div className="space-y-6 pb-3 pt-2">
-            {/* Navbar Links */}
-            {links.map((link) => (
-              <Link className="block" key={link.link} href={link.href}>
+            {links.map(({ href, link }) => (
+              <Link className="block" key={link} href={href}>
                 <span
-                  className={`text-2xl font-semibold ${textColor} ${textHoverColor}`}
+                  className={classNames(
+                    "text-2xl font-semibold",
+                    textColor,
+                    textHoverColor,
+                  )}
                 >
-                  {link.link}
+                  {link}
                 </span>
               </Link>
             ))}

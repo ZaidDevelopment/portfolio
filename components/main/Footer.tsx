@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+const Footer = () => {
+  const currentYear: number = new Date().getFullYear();
 
   return (
     <footer className="w-full bg-[#191c1f]">
@@ -15,31 +15,32 @@ const Footer: React.FC = () => {
               alt="Zaid Development logo"
               width={110}
               height={110}
+              className="transition-opacity hover:opacity-80"
             />
           </Link>
         </div>
         <hr className="border-gray-600" />
-        <div className="py-9 text-center text-[#68727b]">
+        <div className="py-9 text-center text-gray-400">
           <p>&copy; {currentYear} Zaid Development. All rights reserved.</p>
           <p className="text-xs">
             Images & Media &copy; {currentYear}{" "}
-            <a
-              className="underline hover:text-[#beccd6]"
+            <Link
               href="https://www.freepik.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline hover:text-gray-200"
             >
               Freepik
-            </a>{" "}
+            </Link>{" "}
             &{" "}
-            <a
-              className="underline hover:text-[#beccd6]"
+            <Link
               href="https://unsplash.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline hover:text-gray-200"
             >
               Unsplash
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {
+interface ProjectCardProps {
   imageSrc: string;
   imageWidth: number;
   imageHeight: number;
@@ -18,29 +18,27 @@ const ProjectCard = ({
   title,
   description,
   page,
-}: Props) => {
+}: ProjectCardProps) => {
   return (
-    // add key={index} ?
     <div className="mb-5">
       <div className="group relative rounded-xl from-[#5651e5] to-[#709dff] hover:bg-gradient-to-r">
         <Image
-          className="w-[100%] rounded-xl group-hover:opacity-10"
+          className="w-full rounded-xl group-hover:opacity-10"
           src={imageSrc}
-          alt="project image"
+          alt={`${title} image`}
           width={imageWidth}
           height={imageHeight}
+          priority
         />
-        <div className="absolute left-[50%] top-[50%] hidden w-full translate-x-[-50%] translate-y-[-50%] group-hover:block">
+        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <h3 className="text-center text-3xl text-white md:text-2xl">
             {title}
           </h3>
-          <div className="mt-9 flex items-center justify-center md:mt-7">
-            <Link href={page}>
-              <button className="rounded-lg bg-white px-4 py-2 text-center font-bold text-gray-700 hover:bg-slate-300 lg:text-sm">
-                More Info
-              </button>
-            </Link>
-          </div>
+          <Link href={page}>
+            <button className="mt-6 rounded-lg bg-white px-4 py-2 text-center font-bold text-gray-700 hover:bg-slate-300 lg:text-sm">
+              More Info
+            </button>
+          </Link>
         </div>
       </div>
       <h1 className="mt-3 text-base font-semibold text-slate-700">{title}</h1>

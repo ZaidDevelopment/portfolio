@@ -3,92 +3,110 @@ import Image from "next/image";
 import Link from "next/link";
 import { RxDotFilled } from "react-icons/rx";
 
-export const Page = () => {
+// Component for displaying technologies used in the project
+const Technologies = () => {
+  const techStack: string[] = [
+    "Node.js",
+    "Express",
+    "JavaScript",
+    "HTML 5",
+    "CSS 3",
+    "Bootstrap",
+  ];
+
+  return (
+    <div className="rounded-xl px-7 py-4 shadow-md shadow-gray-400 lg:px-0">
+      <div className="mx-auto w-[90%] lg:w-[100%]">
+        <div className="p-2">
+          <p className="pb-4 text-center font-bold lg:pb-2">Technologies</p>
+          <div className="grid grid-cols-2 justify-items-center gap-1 text-gray-600 sm:grid-cols-3 lg:ml-2 lg:grid-cols-1 lg:justify-items-start">
+            {techStack.map((tech) => (
+              <p key={tech} className="min-w-[95%]">
+                <RxDotFilled className="mr-1 inline" /> {tech}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main Page Component
+const Page = () => {
   return (
     <div className="mt-1 w-full bg-[#f5f5f5] pb-4">
-      <div className="relative h-[40vh] w-screen">
+      {/* Image Section */}
+      <div className="relative h-[40vh] w-full">
         <Image
           className="absolute opacity-90"
-          layout="fill"
-          objectFit="cover"
-          src={"/images/portfolio/newsletter.png"}
-          alt="/"
+          fill
+          style={{ objectFit: "cover" }}
+          src="/images/portfolio/newsletter.png"
+          alt="Newsletter Project"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-15"></div>
       </div>
+
+      {/* Content Section */}
       <div className="mx-auto mt-3 max-w-5xl px-4 py-2 text-neutral-900 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-5">
+          {/* Project Overview */}
           <div className="lg:col-span-4">
             <h1 className="text-xl font-bold text-blue-500">
-              Project overview
+              Project Overview
             </h1>
             <p className="text-slate-700">
-              The user can register and sign up to newsletters. A third party
+              The user can register and sign up for newsletters. A third-party
               service{" "}
               <a
                 href="https://mailchimp.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-500 no-underline hover:underline"
               >
                 Mailchimp
               </a>{" "}
-              is used to register users. A very simple application to just to
-              get more experience writing vanilla JavaScript code, HTML 5, CSS
-              3, and back-end code Node.js and Express.
+              is used to register users. This simple application was built to
+              gain more experience writing vanilla JavaScript, HTML5, CSS3, and
+              back-end code using Node.js and Express.
             </p>
+
             <h2 className="mt-4 font-bold text-blue-950 underline">
-              Skills learned and demonstrated
+              Skills Learned and Demonstrated
             </h2>
             <p className="text-slate-700">
-              The purpose of this application was to get experience writing
-              vanilla JavaScript code and back-end code using Node.js, Express.
-              I am a front-end developer but it is still vital to understand
-              what is happening in the back-end, hence I did this project to
-              have an understanding of the fundamentals of front-end and
-              back-end development.
+              The purpose of this project was to gain experience in writing
+              vanilla JavaScript and back-end code using Node.js and Express.
+              While I focus on front-end development, understanding back-end
+              fundamentals is crucial, and this project provided that
+              experience.
             </p>
+
+            {/* Button */}
             <div className="mt-5">
               <Link
-                href={"https://github.com/ZaidDevelopment/Newsletter-Signup"}
+                href="https://github.com/ZaidDevelopment/Newsletter-Signup"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <button className="rounded-lg border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white">
+                <button className="inline-block rounded-lg border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition-colors duration-300 hover:bg-blue-500 hover:text-white">
                   Code
                 </button>
               </Link>
             </div>
           </div>
-          <div className="rounded-xl px-7 py-4 shadow-md shadow-gray-400 lg:px-0">
-            <div className="mx-auto w-[90%] lg:w-[100%]">
-              <div className="p-2">
-                <p className="pb-4 text-center font-bold lg:pb-2">
-                  Technologies
-                </p>
-                <div className="grid grid-cols-2 justify-items-center gap-1 text-gray-600 sm:grid-cols-3 lg:ml-2 lg:grid-cols-1 lg:justify-items-start">
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> Node.js
-                  </p>
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> Express
-                  </p>
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> Javascript
-                  </p>
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> HTML 5
-                  </p>
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> CSS 3
-                  </p>
-                  <p className="min-w-[95%]">
-                    <RxDotFilled className="mr-1 inline" /> Bootstrap
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          {/* Technologies Section */}
+          <Technologies />
         </div>
+
+        {/* Back Button */}
         <Link href="/#projects">
-          <button className="mb-5 mt-12 underline">Back</button>
+          <button className="mb-5 mt-12 block text-center text-blue-500 underline hover:text-blue-700">
+            Back
+          </button>
         </Link>
       </div>
     </div>
