@@ -41,8 +41,10 @@ const ProjectCard = ({
           </Link>
         </div>
       </div>
-      <h1 className="mt-3 text-base font-semibold text-slate-700">{title}</h1>
-      <p className="mt-1 text-base font-normal text-gray-500">{description}</p>
+      <h1 className="mt-2 text-base font-semibold text-slate-700">{title}</h1>
+      <p className="text-base font-normal leading-none text-gray-500">
+        {description}
+      </p>
     </div>
   );
 };
