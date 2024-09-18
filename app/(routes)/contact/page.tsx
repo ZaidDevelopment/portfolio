@@ -9,7 +9,7 @@ const ContactForm = ({ actionUrl }: FormProps) => {
   return (
     <div className="w-full bg-gradient-to-b from-black via-gray-800 to-[#191c1f]">
       <div className="mx-auto max-w-5xl px-4 sm:mt-5 sm:px-6 lg:px-8">
-        <div className="flex h-screen w-full items-center justify-center">
+        <div className="flex min-h-screen w-full items-center justify-center">
           <form
             action={actionUrl}
             method="POST"
