@@ -89,7 +89,7 @@ const Page = () => {
             {/* Buttons */}
             <div className="mt-5">
               <Link
-                href="https://github.com/ZaidDevelopment/foodapp"
+                href="https://github.com/ZaidDevelopment/portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -98,7 +98,7 @@ const Page = () => {
                 </button>
               </Link>
               <Link
-                href="https://foodapp-portfolio.netlify.app/"
+                href="https://next14portfolio.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
