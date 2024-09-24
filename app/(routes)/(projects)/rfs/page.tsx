@@ -79,15 +79,6 @@ const Page = () => {
                   Code
                 </button>
               </Link>
-              <Link
-                href="https://zaiddevelopment.github.io/Red-Flags-Prototype/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="mr-3 inline-block rounded-lg border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition-colors duration-300 hover:bg-blue-500 hover:text-white">
-                  Demo
-                </button>
-              </Link>
             </div>
           </div>
 
